@@ -25,10 +25,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Load data
+
 df = pd.read_csv("data.csv")
 
-# Show data
+
 print("DATASET:")
 print(df)
 
@@ -38,20 +38,20 @@ print(df.describe())
 print("\nCORRELATION:")
 print(df.corr())
 
-# Pair plot
+
 sns.pairplot(df)
 plt.show()
 
-# Heatmap
+
 plt.figure()
 sns.heatmap(df.corr(), annot=True, cmap="coolwarm")
 plt.title("Correlation Heatmap")
 plt.show()
 
-# Feature Engineering
+
 df["productivity"] = df["study_hours"] - df["screen_time"]
 
-# Machine Learning
+
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 
@@ -78,7 +78,7 @@ import streamlit as st
 import pandas as pd
 from sklearn.linear_model import LinearRegression
 
-# Load data
+
 df = pd.read_csv("data.csv")
 
 X = df[["study_hours", "sleep_hours", "screen_time", "attendance"]]
@@ -87,7 +87,7 @@ y = df["marks"]
 model = LinearRegression()
 model.fit(X, y)
 
-# UI
+
 st.title("Student Study Pattern Analyzer")
 
 study = st.slider("Study Hours", 1, 10, 5)
